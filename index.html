@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Fight 4 Life </title>
+		<link href="css/F4L.css" rel="stylesheet">
+		<link href="css/animation.css" rel="stylesheet">
+		<script src="js/general.js"> </script>
+		<script src="js/enemy.js"> </script>
+		<script src="js/player.js"> </script>
+		<script src="js/aces.js"> </script>
+
+		<audio id="fightsoundhtml" src="sound/fightsound.mp3"></audio>
+		<audio id="punchsoundhtml" src="sound/punchsound.mp3"></audio>
+
+		<style>
+				
+				
+				
+		</style>
+		
+		<script src="https://randojs.com/1.0.0.js"></script>
+		<script>
+			var fightsoundjs = document.getElementById("fightsoundhtml");
+			var punchsoundjs = document.getElementById("punchsoundhtml");
+		</script>
+		
+	</head>
+	
+	
+	<body onload="pagestart()">
+		
+		
+		
+		<div class=center>
+			<Titolo> Fight 4 Life </Titolo>
+		</div>
+		
+		<!-- Bottoni -->
+		<button id="fightbutton" class=Attack onclick="fight()"> Fight </button> 
+		<button id="fightasso" onclick="acefight()"> Fight Aces	</button>
+		<button id="accept"class=Accept onclick="aaccept()"> Ok </button>
+		
+		<button id="punch"class=Punch onclick="playerattackjs(Punch,PunchMiss,PunchStamina)"> Punch </button>
+		<button id="barrage"class=Barrage onclick="playerattackjs(BarragePunch,BarragePunchMiss,BarragePunchStamina)"> Barrage </button>
+		<button id="kick"class=Kick onclick="playerattackjs(Kick,KickMiss,KickStamina)"> Kick </button>
+		<button id="spinkick"class=SpinKick onclick="playerattackjs(SpinKick,SpinKickMiss,SpinKickStamina)"> Spin Kick </button>
+
+		<button id="punchace"class=Punch onclick="playeraceattackace(Punch,PunchMiss,PunchStamina)"> Punch </button>
+		<button id="barrageace"class=Barrage onclick="playeraceattackace(BarragePunch,BarragePunchMiss,BarragePunchStamina)"> Barrage </button>
+		<button id="kickace"class=Kick onclick="playeraceattackace(Kick,KickMiss,KickStamina)"> Kick </button>
+		<button id="spinkickace"class=SpinKick onclick="playeraceattackace(SpinKick,SpinKickMiss,SpinKickStamina)"> Spin Kick </button>
+		<!-- -->
+		
+		
+		<img id="Player"  src="img/player.png" alt="player"  width="150" height="300">
+		<img id="Enemy"  src="img/enemy.png" alt="enemy"  width="130" height="300">
+
+
+		<div id="Stats" class=stats>
+			<h1> Level: <h11 id="level" > </h11> </h1> 
+			<h1> Health: <h11 id="Health" > </h11> </h1>
+			<h1> Stamina: <h11  id="Stamina" > </h11> </h1>
+			
+			
+		</div>
+		
+		
+		
+		<div id="enemyStats" class=enemystats>
+		
+			<h1> Level: <h11 id="enemylevel"> </h11> </h1>
+			<h1> Health: <h11 id="enemyhealth"> </h11> </h1>
+			<h1> Stamina: <h11 id="enemystamina"> </h11> </h1>
+			
+		</div>	
+		
+		<div id="movelog" class=MoveLog>
+			
+			<h2> Move Log </h2>
+			<h3> Player: <h4 id="playerAttack"> </h4> </h3>
+			<h5>  <h5>
+			<h3> Enemy: <h4 id="enemyAttack"> </h4> </h3>
+			
+			
+		</div>
+		
+		<div id="rewardlog" class=RewardLog>
+			
+			
+			<h3> Hai ottenuto <h4 id="reward"> </h4> xp </h3>
+			
+			
+		</div>
+		
+		
+		<div id="xprichiesta">
+			<h1> XP: <h11 id="xp" > </h11> <h11>/</h111> <h11 id="xpneed"> </h11> </h1>
+
+		</div>
+
+
+		<div id="lore">
+			<p>Ti hanno condannato alla crocifissione per non aver pagato i debiti di tuo fratello</p>
+			<p>Ma ti hanno proposto un accordo per provare a salvarti</p>
+			<p>Ovvero di lavorare per Donatello in un fight club</p>
+			<p>E per potertene andare devi sconfiggere 5 dei loro migliori combattenti</p>
+
+		</div>
+
+		<div id="nomeenemy"></div>
+
+
+		<div id="divdeath">
+			<p> Sei Stato Sconfitto </p>
+			<button id="realoadbutton" onclick="location.reload()"> Restart </button>
+			<button id="revivebutton" onclick="revive()"> Riprova</button>
+		</div>
+
+	</body>
+	
+	
+</html>
